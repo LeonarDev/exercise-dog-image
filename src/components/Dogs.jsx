@@ -38,7 +38,7 @@ class Dogs extends React.Component {
 
   render() {
 
-    const { storedDogs } = this.state;
+    const { storedDogs, dogObj } = this.state;
     const loadingElement = <span>Loading...</span>;
 
     return (
@@ -47,7 +47,7 @@ class Dogs extends React.Component {
           { storedDogs.map(({ message }) => (<p key={ message }>{ message }</p>)) }
         </span>
 
-        <span>RENDERIZAÇÂO CONDICIONAL</span>
+        { dogObj ? <img src={dogObj.message}/> : loadingElement }
       </div>
     )
   }
